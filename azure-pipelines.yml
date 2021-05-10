@@ -1,10 +1,5 @@
 # Starter pipeline
-- task: SonarQubePrepare@4
-  inputs:
-    SonarQube: 'SonarQube_CherifKhater'
-    scannerMode: 'MSBuild'
-    projectKey: 'ACTQNBEG'
-    projectName: 'QNBEgypt_AE'
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -18,7 +13,13 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-
+- task: SonarQubePrepare@4
+  inputs:
+    SonarQube: 'SonarQube_CherifKhater'
+    scannerMode: 'MSBuild'
+    projectKey: 'ACTQNBEG'
+    projectName: 'QNBEgypt_AE'
+    
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
